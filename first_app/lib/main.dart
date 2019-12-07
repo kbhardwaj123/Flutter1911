@@ -1,3 +1,5 @@
+/////////////DEFAULT APP//////////////
+
 // import 'package:flutter/material.dart';
 
 // void main() => runApp(MyApp());
@@ -110,6 +112,35 @@
 // }
 // }
 
+
+
+/////////////////////////HELLO WORLD APP///////////////////////////////////
+///
+// import 'package:flutter/material.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Welcome to Flutter',
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text('Welcome to Flutter'),
+//         ),
+//         body: Center(
+//           child: Text('Hello World'),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+
+/////////////////////////,,,,,STARTUP NAMER,,,,,,,///////////////////////////////////////////////////
+
+
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 void main() => runApp(MyApp());
@@ -120,7 +151,8 @@ class MyApp extends StatelessWidget {
     
     return MaterialApp(
       title: 'Startup Name Generator',
-      home: RandomWords()
+      theme: ThemeData(primaryColor: Colors.purple),
+      home: RandomWords(),
     );
   }
 }
@@ -138,9 +170,39 @@ class RandomWordsState extends State<RandomWords> {
   Widget build(BuildContext context) {
     // final WordPair wordPair = WordPair.random();
     // return Text(wordPair.asPascalCase);
+    void _pushSaved() {
+      Navigator.of(context).push(
+        MaterialPageRoute<void>(
+          builder: (BuildContext context) {
+            final Iterable<ListTile> tiles = _saved.map(
+              (WordPair pair) {
+                return ListTile(
+                  title: Text(pair.asPascalCase,style: _biggerFont,),
+                );
+              },
+            );
+            final List<Widget> _divided = ListTile
+              .divideTiles(
+                context: context,
+                tiles: tiles,
+              )
+              .toList();
+            return Scaffold(
+              appBar: AppBar(
+                title: Text('Favourite Suggestions'),
+              ),
+              body: ListView(children: _divided),
+            );
+          }
+        )
+      );
+    }
     return Scaffold (
       appBar: AppBar(
         title: Text('Startup Name Generator'),
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.list), onPressed: _pushSaved),
+        ],
       ),
       body: _buildSuggestions(),
     );
@@ -186,6 +248,54 @@ class RandomWordsState extends State<RandomWords> {
 }
 
 
+//////////////////////////MATERIAL LAYOUT//////////////////////////////
 
 
+// import 'package:flutter/material.dart';
 
+// void main() => runApp(MyApp());
+
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'test',
+//       home: TutorialHome(),
+//     );
+//   }
+// }
+
+
+// class TutorialHome extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     // Scaffold is a layout for the major Material Components.
+//     return Scaffold(
+//       appBar: AppBar(
+//         leading: IconButton(
+//           icon: Icon(Icons.menu),
+//           tooltip: 'Navigation menu',
+//           onPressed: null,
+//         ),
+//         title: Text('Example title'),
+//         actions: <Widget>[
+//           IconButton(
+//             icon: Icon(Icons.search),
+//             tooltip: 'Search',
+//             onPressed: null,
+//           ),
+//         ],
+//       ),
+//       // body is the majority of the screen.
+//       body: Center(
+//         child: Text('Hello, world!'),
+//       ),
+//       floatingActionButton: FloatingActionButton(
+//         tooltip: 'Add', // used by assistive technologies
+//         child: Icon(Icons.add),
+//         onPressed: null,
+//       ),
+//     );
+//   }
+// }
