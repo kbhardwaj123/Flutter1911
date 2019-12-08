@@ -299,3 +299,59 @@ class RandomWordsState extends State<RandomWords> {
 //     );
 //   }
 // }
+
+
+//////////////////////''''''''''TINKERING''''''''''///////////////////////////
+
+
+// import 'package:flutter/material.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Test',
+//       home: _TinkerWidget(),
+//     );
+//   }
+// }
+
+// class _TinkerWidget extends StatefulWidget {
+//   @override
+//     _TinkerWidgetState createState() => _TinkerWidgetState();
+// }
+
+// class _TinkerWidgetState extends State<_TinkerWidget> {
+//   int _counter = 0;
+//   @override
+//   Widget build(BuildContext context) {
+//     void _adjustValue() {
+//       setState(() {
+//         ++_counter;
+//       });
+//     }
+//     return Scaffold(
+//       appBar: AppBar(
+//         leading: Icon(Icons.menu),
+//         title: Text('Just Testing'),
+//         actions: <Widget>[
+//           Icon(Icons.search),
+//         ],
+//       ),
+//       body: Container(
+//         height: 500.0,
+//         width: 500.0,
+//         padding: const EdgeInsets.all(8.0),
+//         color: _counter%2==0 ? Colors.red : Colors.blue,
+//         child: Center(child: Text('Count: $_counter'),),
+//       ),
+//       floatingActionButton: FloatingActionButton(
+//         tooltip: 'Add',
+//         child: Icon(Icons.add),
+//         onPressed: _adjustValue,
+//       ),
+//     );
+//   }
+// }
