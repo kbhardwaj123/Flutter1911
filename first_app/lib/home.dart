@@ -5,7 +5,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('you did it!!'),),
+        child: Text('You did it!!'),
+        ),
+      resizeToAvoidBottomInset: false,
     );
   }
 }
