@@ -27,9 +27,23 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(
-        child: Text('You did it!!'),
-        ),
+      body: GridView.count(
+        crossAxisCount: 2,
+        padding: EdgeInsets.all(16.0),
+        childAspectRatio: 8.0/9.0,
+        children: <Widget>[Card(
+          clipBehavior: Clip.antiAlias,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              AspectRatio(
+                aspectRatio: 18.0/11.0,
+                child: Image.asset('assets/diamond.png'),
+              ),
+            ],
+          ),
+        )],
+      ),
       resizeToAvoidBottomInset: false,
     );
   }
