@@ -2,6 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'model/product.dart';
 
+class _FrontLayer extends StatelessWidget {
+  const _FrontLayer({
+    Key key,
+    this.child,
+  }) : super(key : key);
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      elevation: 16.0,
+      shape: BeveledRectangleBorder(
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(46.0)),
+      ),
+      child: child,
+    );
+  }
+}
+
 class Backdrop extends StatefulWidget {
   final Category currentCategory;
   final Widget frontLayer;
@@ -32,7 +51,7 @@ class _BackdropState extends State<Backdrop> with SingleTickerProviderStateMixin
       key: _backdropKey,
       children: <Widget>[
         widget.backlayer,
-        widget.frontLayer,
+        _FrontLayer(child: widget.frontLayer),
       ],
     );
   }

@@ -60,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                 decoration: InputDecoration(
                   labelText: 'Password',
                 ),
-                controller: _usernameController,
+                controller: _passwordController,
                 obscureText: true,
               ),
             ),
