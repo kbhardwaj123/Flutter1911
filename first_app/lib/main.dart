@@ -356,7 +356,30 @@
 //   }
 // }
 
-import 'package:flutter/material.dart';
-import 'package:first_app/app.dart';
 
-void main() => runApp(ShrineApp());
+//////////////////////////////'''''''SHRINE APP''''''''////////////////////////
+
+// import 'package:flutter/material.dart';
+// import 'package:first_app/app.dart';
+
+// void main() => runApp(ShrineApp());
+
+/////////////////////////////''''''''SHRINE APP'''''''/////////////////////////
+
+
+///////////////////'''''''ANIMATION''''''''//////////////////////// 
+
+import 'package:flutter/material.dart';
+import 'basic_animation.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Demo',
+      home: BasicAnimationView(),
+    );
+  }
+}
