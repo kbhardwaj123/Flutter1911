@@ -370,7 +370,7 @@
 ///////////////////'''''''ANIMATION''''''''//////////////////////// 
 
 import 'package:flutter/material.dart';
-import 'basic_animation.dart';
+import 'animation_widget.dart';
 
 void main() => runApp(MyApp());
 
@@ -379,7 +379,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Demo',
-      home: BasicAnimationView(),
+      home: AnimatedWidgetView(),
     );
   }
 }
