@@ -424,6 +424,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: FirstPage(),
+      routes: {
+        '/second' : (_) => SecondPage(data: 'asdgfsd',)
+      },
     );
   }
 }
