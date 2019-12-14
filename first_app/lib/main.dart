@@ -1,3 +1,4 @@
+import 'package:first_app/menu_dashboard_layout.dart';
 /////////////DEFAULT APP//////////////
 
 // import 'package:flutter/material.dart';
@@ -369,17 +370,37 @@
 
 ///////////////////'''''''ANIMATION''''''''//////////////////////// 
 
-import 'package:flutter/material.dart';
-import 'hooks_view.dart';
+// import 'package:flutter/material.dart';
+// import 'hooks_view.dart';
 
-void main() => runApp(MyApp());
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Demo',
+//       home: HooksView(),
+//     );
+//   }
+// }
+
+//////////////////''''''''SideBar'''''''/////////////////////
+
+
+import 'package:flutter/material.dart';
+
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Demo',
-      home: HooksView(),
+      title: 'Test',
+      home: Container(
+        child: MenuDashboard(),
+      )
     );
   }
 }
