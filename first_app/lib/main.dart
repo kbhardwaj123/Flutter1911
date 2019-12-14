@@ -1,4 +1,3 @@
-import 'package:first_app/menu_dashboard_layout.dart';
 /////////////DEFAULT APP//////////////
 
 // import 'package:flutter/material.dart';
@@ -389,6 +388,7 @@ import 'package:first_app/menu_dashboard_layout.dart';
 
 
 // import 'package:flutter/material.dart';
+//import 'package:first_app/menu_dashboard_layout.dart';
 
 // void main() => runApp(MyApp());
 
@@ -423,10 +423,43 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: FirstPage(),
-      routes: {
-        '/second' : (_) => SecondPage(data: 'asdgfsd',)
-      },
+      // home: FirstPage(),
+      // routes: {
+      //   '/second' : (_) => SecondPage(data: 'asdgfsd',)
+      // },
+      onGenerateRoute: RouteGenerator.generateRoute,
+    );
+  }
+}
+
+class RouteGenerator {
+  static Route<dynamic> generateRoute(RouteSettings settings) {
+    final args = settings.arguments;
+
+    switch (settings.name) {
+      case '/': 
+        return MaterialPageRoute(
+          builder: (_) => FirstPage()
+        );
+      case '/second':
+        if(args is String) {
+          return MaterialPageRoute(
+            builder: (_) => SecondPage(data: args,)
+          );
+        }
+        return _errorRoute();
+      default: return _errorRoute();
+    }
+  }
+
+  static Route<dynamic> _errorRoute() {
+    return MaterialPageRoute(
+      builder: (_) => Scaffold(
+        appBar: AppBar(
+          title: Text('ERROR'),
+        ),
+        body: Center(child: Text('Some error has occured'),),
+      )
     );
   }
 }

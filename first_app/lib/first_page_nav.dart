@@ -25,7 +25,7 @@ class FirstPage extends StatelessWidget {
                 //       SecondPage(data: 'Hello there from the first page'),
                 //   )
                 // );
-                Navigator.of(context).pushNamed('/second');
+                Navigator.of(context).pushNamed('/second',arguments: 'Hello there from the first page');
               },
             ),
           ],
