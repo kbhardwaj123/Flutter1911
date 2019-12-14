@@ -388,20 +388,42 @@ import 'package:first_app/menu_dashboard_layout.dart';
 //////////////////''''''''SideBar'''''''/////////////////////
 
 
+// import 'package:flutter/material.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({Key key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Test',
+//       home: Container(
+//         child: MenuDashboard(),
+//       )
+//     );
+//   }
+// }
+
+
+/////////////////'''''''''''''''ROUTING'''''''''''////////////////
+
 import 'package:flutter/material.dart';
+import 'first_page_nav.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Test',
-      home: Container(
-        child: MenuDashboard(),
-      )
+      title: 'Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: FirstPage(),
     );
   }
 }
