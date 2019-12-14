@@ -1,7 +1,7 @@
+import 'package:first_app/shrine_routes.dart';
 import 'package:flutter/material.dart';
 import 'supplemental/cut_corners_border.dart';
 import 'home.dart';
-import 'login.dart';
 import 'colors.dart';
 import 'backdrop.dart';
 import 'model/product.dart';
@@ -57,27 +57,20 @@ class ShrineApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Shrine',
-      home: Backdrop(
-        currentCategory: Category.all,
-        frontLayer: HomePage(),
-        backlayer: Container(color: kShrinePink100,),
-        frontTitle: Text('SHRINE'),
-        backTitle: Text('MENU'),
-      ),
-      initialRoute: '/login',
-      onGenerateRoute: _getRoute,
+      initialRoute: '/',
+      onGenerateRoute: RouteGeneratorShrine.getRoutes,
       theme: _kShrineTheme,
     );
   }
 
-  Route<dynamic> _getRoute(RouteSettings settings) {
-    if (settings.name !='/login') {
-      return null;
-    }
-    return MaterialPageRoute<void>(
-      settings: settings,
-      builder: (BuildContext context) => LoginPage(),
-      fullscreenDialog: true,
-    );
-  }
+  // Route<dynamic> _getRoute(RouteSettings settings) {
+  //   if (settings.name !='/login') {
+  //     return null;
+  //   }
+  //   return MaterialPageRoute<void>(
+  //     settings: settings,
+  //     builder: (BuildContext context) => LoginPage(),
+  //     fullscreenDialog: true,
+  //   );
+  // }
 }

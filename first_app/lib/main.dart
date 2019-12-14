@@ -359,10 +359,10 @@
 
 //////////////////////////////'''''''SHRINE APP''''''''////////////////////////
 
-// import 'package:flutter/material.dart';
-// import 'package:first_app/app.dart';
+import 'package:flutter/material.dart';
+import 'package:first_app/app.dart';
 
-// void main() => runApp(ShrineApp());
+void main() => runApp(ShrineApp());
 
 /////////////////////////////''''''''SHRINE APP'''''''/////////////////////////
 
@@ -409,57 +409,57 @@
 
 /////////////////'''''''''''''''ROUTING'''''''''''////////////////
 
-import 'package:flutter/material.dart';
-import 'first_page_nav.dart';
+// import 'package:flutter/material.dart';
+// import 'first_page_nav.dart';
 
-void main() => runApp(MyApp());
+// void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+// class MyApp extends StatelessWidget {
   
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      // home: FirstPage(),
-      // routes: {
-      //   '/second' : (_) => SecondPage(data: 'asdgfsd',)
-      // },
-      onGenerateRoute: RouteGenerator.generateRoute,
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Demo',
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       // home: FirstPage(),
+//       // routes: {
+//       //   '/second' : (_) => SecondPage(data: 'asdgfsd',)
+//       // },
+//       onGenerateRoute: RouteGenerator.generateRoute,
+//     );
+//   }
+// }
 
-class RouteGenerator {
-  static Route<dynamic> generateRoute(RouteSettings settings) {
-    final args = settings.arguments;
+// class RouteGenerator {
+//   static Route<dynamic> generateRoute(RouteSettings settings) {
+//     final args = settings.arguments;
 
-    switch (settings.name) {
-      case '/': 
-        return MaterialPageRoute(
-          builder: (_) => FirstPage()
-        );
-      case '/second':
-        if(args is String) {
-          return MaterialPageRoute(
-            builder: (_) => SecondPage(data: args,)
-          );
-        }
-        return _errorRoute();
-      default: return _errorRoute();
-    }
-  }
+//     switch (settings.name) {
+//       case '/': 
+//         return MaterialPageRoute(
+//           builder: (_) => FirstPage()
+//         );
+//       case '/second':
+//         if(args is String) {
+//           return MaterialPageRoute(
+//             builder: (_) => SecondPage(data: args,)
+//           );
+//         }
+//         return _errorRoute();
+//       default: return _errorRoute();
+//     }
+//   }
 
-  static Route<dynamic> _errorRoute() {
-    return MaterialPageRoute(
-      builder: (_) => Scaffold(
-        appBar: AppBar(
-          title: Text('ERROR'),
-        ),
-        body: Center(child: Text('Some error has occured'),),
-      )
-    );
-  }
-}
+//   static Route<dynamic> _errorRoute() {
+//     return MaterialPageRoute(
+//       builder: (_) => Scaffold(
+//         appBar: AppBar(
+//           title: Text('ERROR'),
+//         ),
+//         body: Center(child: Text('Some error has occured'),),
+//       )
+//     );
+//   }
+// }
