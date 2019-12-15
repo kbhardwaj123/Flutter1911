@@ -1,5 +1,6 @@
 import 'package:first_app/home.dart';
 import 'package:first_app/login.dart';
+import 'package:first_app/settings.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,10 @@ class RouteGeneratorShrine {
             builder: (_) => HomePage()
           );
         break;
+        case '/settings':
+          return MaterialPageRoute(
+            builder: (_) => SettingsPage()
+          );
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

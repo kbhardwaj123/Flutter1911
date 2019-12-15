@@ -93,7 +93,12 @@ class _MenuDashboardState extends State<MenuDashboard> {
                       },
                     ),
                     Text('Test App'),
-                    Icon(Icons.settings)
+                    IconButton(
+                      icon: Icon(Icons.settings),
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/settings');
+                      },
+                    ),
                   ],
                 )
               )
