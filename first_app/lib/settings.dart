@@ -45,7 +45,7 @@ final makeCard = Card(
     ),
     child: Container(
       decoration: BoxDecoration(
-        color: kShrinePink300,
+        color: kShrinePink100,
       ),
       child: ListTile(
         contentPadding: EdgeInsets.symmetric(horizontal: 20.0,vertical: 10.0),

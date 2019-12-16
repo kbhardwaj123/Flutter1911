@@ -1,4 +1,5 @@
 import 'package:first_app/home.dart';
+import 'package:first_app/json_returner.dart';
 import 'package:first_app/login.dart';
 import 'package:first_app/settings.dart';
 import 'package:flutter/widgets.dart';
@@ -21,6 +22,12 @@ class RouteGeneratorShrine {
           return MaterialPageRoute(
             builder: (_) => SettingsPage()
           );
+          break;
+          case '/json':
+            return MaterialPageRoute(
+              builder: (_) => JsonPage()
+            );
+            break;
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

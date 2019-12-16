@@ -106,7 +106,12 @@ class _HomePageState extends State<HomePage> {
         ),
         title: Text('SHRINE'),
         actions: <Widget>[
-
+          IconButton(
+            icon: Icon(Icons.settings),
+            onPressed: () {
+              Navigator.pushNamed(context, '/settings');
+            },
+          )
         ],
       ),
       body: 
@@ -185,24 +190,27 @@ class _HomePageState extends State<HomePage> {
     return Container(
       height: 55.0,
       child: BottomAppBar(
-        color: Color.fromRGBO(58, 66, 86, 1.0),
+        // color: Color.fromRGBO(58, 66, 86, 1.0),
+        color: kShrinePink100,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             IconButton(
-              icon: Icon(Icons.home, color: Colors.white),
+              icon: Icon(Icons.home, color: Colors.black54),
+              onPressed: () {
+                Navigator.pushNamed(context, '/json');
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.blur_on, color: Colors.black54),
               onPressed: () {},
             ),
             IconButton(
-              icon: Icon(Icons.blur_on, color: Colors.white),
+              icon: Icon(Icons.hotel, color: Colors.black54),
               onPressed: () {},
             ),
             IconButton(
-              icon: Icon(Icons.hotel, color: Colors.white),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: Icon(Icons.account_box, color: Colors.white),
+              icon: Icon(Icons.account_box, color: Colors.black54),
               onPressed: () {},
             )
           ],
