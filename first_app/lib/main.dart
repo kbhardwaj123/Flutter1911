@@ -360,10 +360,10 @@ import 'package:first_app/screens/wrapper.dart';
 
 //////////////////////////////'''''''SHRINE APP''''''''////////////////////////
 
-// import 'package:flutter/material.dart';
-// import 'package:first_app/app.dart';
+import 'package:flutter/material.dart';
+import 'package:first_app/app.dart';
 
-// void main() => runApp(ShrineApp());
+void main() => runApp(ShrineApp());
 
 /////////////////////////////''''''''SHRINE APP'''''''/////////////////////////
 
@@ -467,17 +467,17 @@ import 'package:first_app/screens/wrapper.dart';
 
 ////////////////////''''''''''''FIREBASE'''''''''''/////////////////////////////////
 
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+// void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+// class MyApp extends StatelessWidget {
   
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Brewit',
-      home: Wrapper(),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Brewit',
+//       home: Wrapper(),
+//     );
+//   }
+// }
