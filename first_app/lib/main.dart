@@ -1,4 +1,3 @@
-import 'package:first_app/screens/wrapper.dart';
 /////////////DEFAULT APP//////////////
 
 // import 'package:flutter/material.dart';
@@ -360,10 +359,10 @@ import 'package:first_app/screens/wrapper.dart';
 
 //////////////////////////////'''''''SHRINE APP''''''''////////////////////////
 
-import 'package:flutter/material.dart';
-import 'package:first_app/app.dart';
+// import 'package:flutter/material.dart';
+// import 'package:first_app/app.dart';
 
-void main() => runApp(ShrineApp());
+// void main() => runApp(ShrineApp());
 
 /////////////////////////////''''''''SHRINE APP'''''''/////////////////////////
 
@@ -467,17 +466,31 @@ void main() => runApp(ShrineApp());
 
 ////////////////////''''''''''''FIREBASE'''''''''''/////////////////////////////////
 
-// import 'package:flutter/material.dart';
+///////////////''For setting up firebase auth and cloudstore you need to follow the instruction as given in 
+///docs but apart (The Net Ninja's playlist on Flutter Firebase) from that you need to
+/// ensure that the internet connection on the emulator level and app level
+/// (via AndroidManifest.xml) is up and running and the subtle and intricate
+/// detail is regarding gradle.properties 
+/// https://stackoverflow.com/questions/42382457/java-lang-noclassdeffounderror-failed-resolution-of-landroid-support-v4-util-a
 
-// void main() => runApp(MyApp());
+import 'package:flutter/material.dart';
+import 'package:first_app/screens/wrapper.dart';
 
-// class MyApp extends StatelessWidget {
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
   
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Brewit',
-//       home: Wrapper(),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Brewit',
+      home: Wrapper(),
+    );
+  }
+}
+
+
+
+
+
+

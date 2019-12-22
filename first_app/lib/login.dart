@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'colors.dart';
+import 'package:first_app/services/shrine_usermanage.dart';
 
 class AccentColorOverride extends StatelessWidget {
   const AccentColorOverride({Key key, this.color,this.child})
@@ -83,6 +85,11 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   elevation: 8.0,
                   onPressed: () {
+                    FirebaseAuth.instance.createUserWithEmailAndPassword(email: _usernameController.value.toString(),password: _passwordController.value.toString()).then(
+                      (signedInUser) {
+                        UserManagement().storeNewUser(signedInUser, context);
+                      }
+                    ).catchError((e) {print(e);});
                     Navigator.pushNamed(context, '/home');
                   },
                 ),
