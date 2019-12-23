@@ -1,4 +1,5 @@
 import 'package:first_app/services/auth.dart';
+import 'package:first_app/shared/loading.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
@@ -16,13 +17,14 @@ class _RegisterState extends State<Register> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   String error = '';
+  bool loading = false;
   
   @override
   Widget build(BuildContext context) {
   Size size = MediaQuery.of(context).size;
     screenHeight = size.height;
     screenWidth = size.width;
-    return Scaffold(
+    return loading ? Loading() : Scaffold(
       backgroundColor: Colors.brown[100],
       appBar: AppBar(
         backgroundColor: Colors.brown[400],
@@ -83,10 +85,14 @@ class _RegisterState extends State<Register> {
                 ),
                 onPressed: () async {
                   if(_formKey.currentState.validate()) {
+                    setState(() {
+                      loading=true;
+                    });
                     dynamic result = await _auth.registerWithEmailPassword(_emailController.value.text, _passwordController.value.text);
                     if(result==null) {
                       setState(() {
                         error = 'please supply valid email';
+                        loading = false;
                       });
                     }
                   }
