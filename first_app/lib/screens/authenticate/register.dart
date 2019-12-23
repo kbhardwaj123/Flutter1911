@@ -16,6 +16,7 @@ class _RegisterState extends State<Register> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   String error = '';
+  
   @override
   Widget build(BuildContext context) {
   Size size = MediaQuery.of(context).size;

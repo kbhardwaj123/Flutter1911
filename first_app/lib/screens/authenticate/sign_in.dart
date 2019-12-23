@@ -11,11 +11,12 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-
+  final _formKey2 = GlobalKey<FormState>();
   final AuthService _auth = AuthService();
   double screenHeight,screenWidth;
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  String error = '';
   
   @override
   Widget build(BuildContext context) {
@@ -52,6 +53,7 @@ class _SignInState extends State<SignIn> {
         //   },
         // ),
         child: Form(
+          key: _formKey2,
           child: Column(
             children: <Widget>[
               SizedBox(height: 0.01*screenHeight,),
@@ -60,6 +62,7 @@ class _SignInState extends State<SignIn> {
                   labelText: 'Email'
                 ),
                 controller: _emailController,
+                validator: (val) => val.isEmpty ? 'Enter an Email':null,
               ),
               SizedBox(height: 0.01*screenHeight,),
               TextFormField(
@@ -67,6 +70,7 @@ class _SignInState extends State<SignIn> {
                   labelText: 'Password'
                 ),
                 controller: _passwordController,
+                validator: (val) => val.length<6 ? 'Enter a longer password':null,
                 obscureText: true,
               ),
               SizedBox(height: 0.01*screenHeight,),
@@ -79,7 +83,14 @@ class _SignInState extends State<SignIn> {
                   ),
                 ),
                 onPressed: () async {
-
+                  if(_formKey2.currentState.validate()) {
+                    dynamic result = await _auth.signInWithEmailPassword(_emailController.value.text, _passwordController.value.text);
+                    if(result==null) {
+                      setState(() {
+                        error = 'please supply valid email';
+                      });
+                    }
+                  }
                 },
               ),
             ],
