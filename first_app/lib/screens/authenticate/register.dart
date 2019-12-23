@@ -1,30 +1,28 @@
-import 'package:flutter/material.dart';
 import 'package:first_app/services/auth.dart';
+import 'package:flutter/material.dart';
 
-class SignIn extends StatefulWidget {
-  SignIn({Key key}) : super(key: key);
+class Register extends StatefulWidget {
+  Register({Key key}) : super(key: key);
 
   @override
-  _SignInState createState() => _SignInState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _SignInState extends State<SignIn> {
-
+class _RegisterState extends State<Register> {
   final AuthService _auth = AuthService();
   double screenHeight,screenWidth;
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+  Size size = MediaQuery.of(context).size;
     screenHeight = size.height;
     screenWidth = size.width;
     return Scaffold(
       backgroundColor: Colors.brown[100],
       appBar: AppBar(
         backgroundColor: Colors.brown[400],
-        title: Text('Sign in to Brew Crew'),
+        title: Text('Sign Up to Brew Crew'),
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0,horizontal: 50.0),
@@ -62,7 +60,7 @@ class _SignInState extends State<SignIn> {
               RaisedButton(
                 color: Colors.pink[70],
                 child: Text(
-                  'sign in',
+                  'Register',
                   style: TextStyle(
                     color: Colors.white
                   ),
@@ -76,5 +74,5 @@ class _SignInState extends State<SignIn> {
         ),
       ),
     );
-  }
+  } 
 }
