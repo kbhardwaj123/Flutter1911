@@ -1,3 +1,4 @@
+
 /////////////DEFAULT APP//////////////
 
 // import 'package:flutter/material.dart';
@@ -475,6 +476,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:first_app/screens/wrapper.dart';
+import 'package:provider/provider.dart';
+import 'package:first_app/services/auth.dart';
+import 'package:first_app/model/user.dart';
 
 void main() => runApp(MyApp());
 
@@ -482,9 +486,12 @@ class MyApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Brewit',
-      home: Wrapper(),
+    return StreamProvider<User>.value(
+      value: AuthService().user,
+      child: MaterialApp(
+        title: 'Brewit',
+        home: Wrapper(),
+      )
     );
   }
 }
