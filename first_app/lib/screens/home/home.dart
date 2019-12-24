@@ -23,7 +23,7 @@ class Home extends StatelessWidget {
     }
 
     return StreamProvider<List<Brew>>.value(
-      value: DatabaseService().brews,
+      value: DatabaseService().brews, //points to the stream
       child: Scaffold(
         backgroundColor: Colors.brown[50],
         appBar: AppBar(

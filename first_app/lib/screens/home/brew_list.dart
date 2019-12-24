@@ -14,6 +14,7 @@ class _BrewListState extends State<BrewList> {
 
   @override
   Widget build(BuildContext context) {
+    //Standard provider method to access the stream contents
     final brews = Provider.of<List<Brew>>(context);
     if(brews == null) {return Loading();}
     brews.forEach(
