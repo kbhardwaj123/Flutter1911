@@ -16,7 +16,7 @@ class _SettingsFormState extends State<SettingsForm> {
   final _formKey3 = GlobalKey<FormState>();
   final List<String> sugars = ['0','1','2','3','4'];
 
-  final _nameController = TextEditingController();
+  String _currentName;
   String _currentSugars;
   int _currentStrength;
 
@@ -48,11 +48,15 @@ class _SettingsFormState extends State<SettingsForm> {
                   ),
                   SizedBox(height: 20.0,),
                   TextFormField(
-                    initialValue: (userdata.name=='new member') ? null : userdata.name,
+                    initialValue: (userdata.name == 'new member') ? null : userdata.name,
                     decoration: InputDecoration(
                       labelText: 'Name'
                     ),
-                    controller: _nameController,
+                    onChanged: (val) {
+                      setState(() {
+                        _currentName = val;
+                      });
+                    },
                     validator: (val) => val.isEmpty ? 'Enter a name' : null,
                   ),
                   SizedBox(height: 20.0,),
@@ -93,7 +97,15 @@ class _SettingsFormState extends State<SettingsForm> {
                       style: TextStyle(color: Colors.brown),
                     ),
                     onPressed: () async {
-
+                      if(_formKey3.currentState.validate()) {
+                        await DatabaseService(uid: user.uid)
+                          .updateUserData(
+                            _currentSugars ?? userdata.sugars,
+                            _currentName ?? userdata.name,
+                            _currentStrength ?? userdata.strength
+                          );
+                      Navigator.pop(context);
+                      }
                     },
                   )
                 ],
